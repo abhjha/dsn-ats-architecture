@@ -1,0 +1,35 @@
+body{
+    background-image: url("bg-three.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover; 
+    color: white;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+
+.landing-container{
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.page-header{
+    color: white;
+    text-align: center;
+
+}
+
+.dropdown-box{
+    text-align: center;
+}
+
+.practioners-count{
+    text-align: center;
+    color: white;
+}
