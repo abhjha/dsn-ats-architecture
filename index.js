@@ -32,7 +32,7 @@ $(document).ready(function () {
         let selectedElementId = $('.active').data('qid')-1;
         selectedElement.animate({ width: [ "toggle" ], height: [ "toggle" ], opacity: "toggle" });
         selectedElement.next().removeClass('d-none');
-        selectedElement.next().fadeIn('fast')
+        selectedElement.next().fadeIn('fast');
         setTimeout(function(){
             selectedElement.addClass('d-none');
             selectedElement.removeClass('active')
@@ -47,7 +47,6 @@ $(document).ready(function () {
             $('.proceed-button').removeClass('d-none');
             $('.show-archi-button').addClass('d-none');
         }
-        
     })
     
 });
