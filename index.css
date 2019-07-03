@@ -48,6 +48,10 @@ footer{
     margin: 0 auto;
 }
 
+.q-container{
+    height: 130px;
+}
+
 .animate-landing-box{
     animation: bounce 1s;
     top: 10px;

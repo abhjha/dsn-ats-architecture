@@ -1,47 +1,35 @@
 
 
 $(document).ready(function () {
-    let qno1Answer = '',
-        qno2Answer = '',
-        qno3Answer = '',
-        qno4Answer = '',
-        qno5Answer = '',
-        qno6Answer = '';
+    let qAnswerArray = [];
 
-    $(".qno1-container").on('click', 'a', function () {
-        qno1Answer = $(this).text();
-        $('.qno1-container .btn-group .btn-primary:first-child').text(qno1Answer);
-        $('.qno1-container button').prop("disabled", false);
+    $(".qno1").on('click', 'a', function () {
+        let selectedElementId = $('.active').data('qid');
+        let qno1Answer = $(this).text();
+        qAnswerArray[selectedElementId-1] = qno1Answer;
+        $('.qno1 .btn-group .btn-primary:first-child').text(qno1Answer);
+        $('.proceed-button button').prop("disabled", false);
     });
 
-    $(".qno2-container").on('click', 'input[type="radio"]', function(){
-        qno2Answer = $(this).val();
-        $('.qno2-container button').prop("disabled", false);
-    });
-
-    $(".qno3-container").on('click', 'input[type="radio"]', function(){
-        qno3Answer = $(this).val();
-        $('.qno3-container button').prop("disabled", false);
-    });
-
-    $(".qno4-container").on('click', 'input[type="radio"]', function(){
-        qno4Answer = $(this).val();
-        $('.qno4-container button').prop("disabled", false);
-    });
-
-    $(".qno5-container").on('click', 'input[type="radio"]', function(){
-        qno5Answer = $(this).val();
-        $('.qno5-container button').prop("disabled", false);
-    });
-
-    $(".qno6-container").on('click', 'input[type="radio"]', function(){
-        qno6Answer = $(this).val();
-        $('.qno6-container button').prop("disabled", false);
+    $(".q-container").on('click', 'input[type="radio"]', function(){
+        let selectedElementId = $('.active').data('qid');
+        qAnswerArray[selectedElementId-1] = $(this).val();
+        $('.proceed-button button').prop("disabled", false);
     });
 
     $('.proceed-button').on('click', 'button', function(){
-        $(this).parent().parent().addClass('d-none');
-        $(this).parent().parent().next().removeClass('d-none');
+        let selectedElement = $('.active');
+        let selectedElementId = $('.active').data('qid')-1;
+        selectedElement.animate({ width: [ "toggle" ], height: [ "toggle" ], opacity: "toggle" });
+        selectedElement.next().removeClass('d-none');
+        selectedElement.next().fadeIn('fast')
+        setTimeout(function(){
+            selectedElement.addClass('d-none');
+            selectedElement.removeClass('active')
+            selectedElement.next().addClass('active');
+        },500)
+        $('.proceed-button button').prop("disabled", true);
+        $('.menu-container .accordion').children().eq(selectedElementId).find('.answer').html(qAnswerArray[selectedElementId]);
     })
     
 });
