@@ -17,6 +17,16 @@ $(document).ready(function () {
         $('.proceed-button button').prop("disabled", false);
     });
 
+    $(".qno6").on('click', 'input[type="radio"]', function(){
+        $('.show-archi-button button').prop("disabled", false);
+    });
+
+    $('.show-archi-button').on('click', 'button', function(){
+        $('.architecture-diagram-box').removeClass('d-none');
+        $('.active').removeClass('active').addClass('d-none');
+        $('.show-archi-button').addClass('d-none');
+    })
+
     $('.proceed-button').on('click', 'button', function(){
         let selectedElement = $('.active');
         let selectedElementId = $('.active').data('qid')-1;
@@ -30,6 +40,14 @@ $(document).ready(function () {
         },500)
         $('.proceed-button button').prop("disabled", true);
         $('.menu-container .accordion').children().eq(selectedElementId).find('.answer').html(qAnswerArray[selectedElementId]);
+        if($('.q-container').length == selectedElementId+2){
+            $('.proceed-button').addClass('d-none');
+            $('.show-archi-button').removeClass('d-none');
+        } else {
+            $('.proceed-button').removeClass('d-none');
+            $('.show-archi-button').addClass('d-none');
+        }
+        
     })
     
 });

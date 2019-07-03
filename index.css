@@ -40,7 +40,7 @@ footer{
     margin-top: 10rem;
   }
 
-.proceed-button{
+.proceed-button, .show-archi-button{
     text-align: center;
 }
 
@@ -81,7 +81,6 @@ footer{
     color: white;
 }
 
-.architecture-diagram-box{
-    display: none;
+.architecture-diagram-box img{
+    width: 100%;
 }
-  
