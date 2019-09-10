@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+
+    <title>IoT-A</title>
+</head>
+
+<body>
+    <div class="topbar">
+        <ul>
+            <li>
+                <div class="sidenav">
+                    <div id="menu" class="sidebar">
+                        <div class="quiz-container">
+                            <div id="quiz"></div>
+                        </div>
+                    </div>
+                    <div class="button" onclick="openNav(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+                <a style="opacity: 0;" class="active" id="toplogo" href="main.html">
+                    <span style="color: #787878">IoT</span><!--
+                    --><span style="color: #f44336">-</span><!--
+                    --><span style="color: #787878">A<span>
+                </a>
+
+                <div class="dropdown">
+                    <select id="architecture" onchange="arch()">
+                        <option value="ph1">Select Architecture</option>
+                        <option value="thingworx">Thingworx</option>
+                        <option value="aws">AWS</option>
+                        <option value="azure">Azure</option>
+                    </select>
+                    <select id="details" onchange="details()">
+                        <option value="ph2">Select project</option>
+                        <option value="iiot">IIOT</option>
+                        <option value="at">Asset Tracking</option>
+                        <option value="plm">PLM</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="logo" id="logo">
+        <span style="color: #787878">IoT</span><!--
+        --><span style="color: #f44336">-</span><!--
+        --><span style="color: #787878">A<span>
+    </div>
+
+    <div class="architecture" id="arch">
+        <!-- <div class="things" id="op1">            
+            <div>
+                <img style="padding: 10px 20px;" src="images/plc.png">
+                <p>PLC</p>
+            </div>
+            <div>
+                <img style="padding: 10px 20px;" src="images/opac.png">
+                <p>OPAC server</p>
+            </div>
+            <div>
+                <img style="padding: 10px 20px;" src="images/chip.png">
+                <p>Chip</p>
+            </div>
+            <div></div>
+            <div></div>
+            
+            <br><br><br>
+            <p>Capacity: 10</p>
+        </div>
+        <img id="a1" style="width: 130px; height: 10px; top: 150px; opacity: 0;" src="images/arrow.png">
+        <div class="connectivity" id="op2">
+            <p style="font-weight: bold;">Kepware<br>OPAC-UA<br>Server</p>
+            <img style="padding: 10px 45px;" src="images/connect.png">
+            <p style="border: 1px solid #787878 !important;">MQTT</p>
+            <p style="border: 1px solid #787878 !important;">REST</p>
+            <p style="border: 1px solid #787878 !important;">EDGE SDK</p>
+            <br><br><br>
+            <p>Capacity: 10</p>
+        </div>
+        <img id="a2" style="width: 130px; height: 10px; top: 100px; opacity: 0;" src="images/arrow.png"> 
+        <img id="a3" style="width: 130px; height: 10px; top: 300px; opacity: 0;" src="images/arrow.png">
+        <div class="base">
+            <div class="server" id="op3">
+                <img style="padding-left: 50px;" src="images/server.png">
+                <p>Server</p>
+                <br><br>
+            </div>
+            <div class="thingworx" id="op4">
+                <img style="padding: 10px 45px;" src="images/thingworx.png">
+                <p>Data Processing/Integration</p>
+                <p>Storage</p>
+                <p>Event Processing</p>
+                <p>Machine Learning</p>
+                <p>Visualization</p>
+            </div>
+            <br><br><br>
+            <p id="cap" style="position: absolute; top: 580px; left: 600px; opacity: 0;">Capacity: 10</p>
+            <div class="aws">
+                <img src="images/aws.png">
+                <p>Data Processing/Integration</p>
+                <p>Storage</p>
+                <p>Event Processing</p>
+                <p>Machine Learning</p>
+                <p>Visualization</p>
+            </div>
+        </div>
+        <img id="a4" style="width: 130px; height: 10px; top: 150px; opacity: 0;" src="images/arrow.png">
+        <div class="ui" id="op5">
+            <p style="top: 300px;">UI</p>
+            <br><br><br>
+            <p style="top: 800px;">Capacity: 10</p>
+        </div> -->
+
+        <img id="i1" style="height: 800px; width: 1200px; opacity: 0;" src="images/Picture1.png">
+        <img id="i2" style="opacity: 0; height: 600px; width: 1200px;" src="images/aws_asset.png">
+        <img id="i3" style="opacity: 0; height: 500px; width: 1000px;" src="images/azure_asset.png">
+        <img id="i4" style="opacity: 0; height: 600px; width: 1300px;" src="images/plm.png">
+    </div>
+    <div class="procons" id="pc">
+        <ul id="div1">
+            <p>Pros</p>
+            <li>P1</li>
+            <li>P2</li>
+            <p>Cons</p>
+            <li>C1</li>
+            <li>C2</li>
+        </ul>
+        <ul style="margin-left: 170px;" id="div2">
+            <p>Pros</p>
+            <li>P1</li>
+            <li>P2</li>
+            <p>Cons</p>
+            <li>C1</li>
+            <li>C2</li>
+        </ul>
+        <ul style="margin-left: 230px;" id="div3">
+            <p>Pros</p>
+            <li>P1</li>
+            <li>P2</li>
+            <p>Cons</p>
+            <li>C1</li>
+            <li>C2</li>
+        </ul>
+        <ul style="margin-left: 140px;" id="div4">
+            <p>Pros</p>
+            <li>P1</li>
+            <li>P2</li>
+            <p>Cons</p>
+            <li>C1</li>
+            <li>C2</li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
